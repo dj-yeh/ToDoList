@@ -45,7 +45,7 @@ public class Task
 	}
 	
 	/**
-	 * A less general constructor which can be used when no tasks need to be initialized yet.
+	 * A less general constructor which only requires the task.
 	 * @param task will be the name of the task
 	 */
 	public Task(String task)
@@ -54,7 +54,7 @@ public class Task
 	}
 	
 	/**
-	 * A less general constructor which can be used when no tasks need to be initialized yet.
+	 * A less general constructor which only requires the completion status.
 	 * @param completed indicates if a task has been checked off or not
 	 */
 	public Task(boolean completed)
