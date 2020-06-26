@@ -47,15 +47,16 @@ public class Task
 	/**
 	 * A less general constructor which can be used when no tasks need to be initialized yet.
 	 * @param task will be the name of the task
-	 * @param completed indicates if a task has been checked off or not
-	 * @param overdue indicates whether or not a task was completed in time
-	 * @param noteDescription will be the user's task description
 	 */
 	public Task(String task)
 	{
 		this(task, false, false, null);
 	}
 	
+	/**
+	 * A less general constructor which can be used when no tasks need to be initialized yet.
+	 * @param completed indicates if a task has been checked off or not
+	 */
 	public Task(boolean completed)
 	{
 		this(null, completed, false, null);
