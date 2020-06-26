@@ -43,7 +43,11 @@ public class ToDoList
 	 */
 	public ToDoList(String name, int day, int month, int year, ArrayList<Task> tasks)
 	{
-		
+		setName(name);
+		setDay(day);
+		setMonth(month);
+		setYear(year);
+		setTasks(tasks);
 	}
 	
 	/**
@@ -55,7 +59,7 @@ public class ToDoList
 	 */
 	public ToDoList(String name, int day, int month, int year)
 	{
-		
+		this(name, day, month, year, null);
 	}
 	//NO NO-ARG CONSTRUCTOR BECAUSE EVERY TO-DO LIST MUST BE CREATED WITH A NAME AND TIME
 	//------------------------------------------Constructors----------------------------------------------
