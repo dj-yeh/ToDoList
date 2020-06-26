@@ -36,7 +36,7 @@ public class Task
 	 * @param overdue indicates whether or not a task was completed in time
 	 * @param noteDescription will be the user's task description
 	 */
-	public Task(String task, Boolean completed, Boolean overdue, String noteDescription)
+	public Task(String task, boolean completed, boolean overdue, String noteDescription)
 	{
 		setTask(task);
 		setCompleted(completed);
@@ -44,41 +44,21 @@ public class Task
 		setNoteDescription(noteDescription);
 	}
 	
-	//Yo not sure what's happening under here
 	/**
-	 * A less general constructor which only requires the task.
+	 * A less general constructor which can be used when no tasks need to be initialized yet.
 	 * @param task will be the name of the task
+	 * @param completed indicates if a task has been checked off or not
+	 * @param overdue indicates whether or not a task was completed in time
+	 * @param noteDescription will be the user's task description
 	 */
 	public Task(String task)
 	{
-		this(task, null);
+		this(task, false, false, null);
 	}
 	
-	/**
-	 * A less general constructor which only requires a boolean.
-	 * @param completed indicates if a task has been checked off or not
-	 */
-	public Task(Boolean completed)
+	public Task(boolean completed)
 	{
-		this(completed, null);
-	}
-	
-	/**
-	 * A less general constructor which only requires a boolean.
-	 * @param overdue indicates whether or not a task was completed in time
-	 */
-	public Task(boolean overdue)
-	{
-		this(overdue, null);
-	}
-	
-	/**
-	 * A less general constructor which only requires a description.
-	 * @param noteDescription will be the user's task description
-	 */
-	public Task(String noteDescription)
-	{
-		this(noteDescription, null);
+		this(null, completed, false, null);
 	}
 	
 	//--------------------------------Constructors--------------------------------------
@@ -93,22 +73,22 @@ public class Task
 		this.task = task;
 	}
 	
-	public Boolean getCompleted()
+	public boolean getCompleted()
 	{
 		return this.getCompleted();
 	}
 	
-	public void setCompleted(Boolean completed)
+	public void setCompleted(boolean completed)
 	{
 		this.completed = completed;
 	}
 	
-	public Boolean getOverdue()
+	public boolean getOverdue()
 	{
 		return this.getOverdue();
 	}
 	
-	public void setOverdue(Boolean overdue)
+	public void setOverdue(boolean overdue)
 	{
 		this.overdue = overdue;
 	}
