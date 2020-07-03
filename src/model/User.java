@@ -17,6 +17,7 @@ public class User
 	
 	/**
 	 * This instance variable represents all the to-do lists a user may create.
+	 * may need to change the data structure used here
 	 */
 	private ArrayList<ToDoList> lists;
 	//------------------------------Instance Variables----------------------------------

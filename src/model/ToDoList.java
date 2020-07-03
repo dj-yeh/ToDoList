@@ -64,52 +64,91 @@ public class ToDoList
 	//NO NO-ARG CONSTRUCTOR BECAUSE EVERY TO-DO LIST MUST BE CREATED WITH A NAME AND TIME
 	//------------------------------------------Constructors----------------------------------------------
 	
-	
+	/**
+	 * Getter method for the name of the list.
+	 * @return a string form of the name entered by the user when creating the list
+	 */
 	public String getName()
 	{
 		return this.name;
 	}
 	
+	/**
+	 * Setter method for the name of the list.
+	 * @param name is the name of the list
+	 */
 	public void setName(String name)
 	{
 		this.name = name;
 	}
 	
+	/**
+	 * Getter method for the day associated with the list.
+	 * @return the day the list is associated with
+	 */
 	public int getDay()
 	{
 		return this.day;
 	}
 	
+	/**
+	 * Setter method for the day of the list
+	 * @param day 
+	 */
 	public void setDay(int day)
 	{
 		this.day = day;
 	}
 	
+	/**
+	 * Getter method for the month of the list.
+	 * @return the month associated with the list
+	 */
 	public int getMonth()
 	{
 		return this.month;
 	}
 	
+	/**
+	 * Setter method for the month of the list.
+	 * @param month
+	 */
 	public void setMonth(int month)
 	{
 		this.month = month;
 	}
 	
+	/**
+	 * Getter method for the year of the list.
+	 * @return the year associated with the list
+	 */
 	public int getYear()
 	{
 		return this.year;
 	}
 	
+	/**
+	 * Setter method for the year of the list.
+	 * @param year
+	 */
 	public void setYear(int year)
 	{
 		this.year = year;
 	}
 	
+	/**
+	 * Getter method for the tasks of the list
+	 * @return all the task objects
+	 */
 	public ArrayList<Task> getTasks()
 	{
 		return this.tasks;
 	}
 	
+	/**
+	 * Setter method the tasks of the list
+	 * @param tasks
+	 */
 	public void setTasks(ArrayList<Task> tasks)
 	{
 		this.tasks = tasks;

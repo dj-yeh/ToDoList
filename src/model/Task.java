@@ -13,15 +13,15 @@ public class Task
 	/**
 	 * This instance variable represents the name of the task.
 	 */
-	private String task;
+	private String taskName;
 	/**
 	 * This instance variable represents the completion status of a task.
 	 */
-	private Boolean completed;
+	private boolean completed;
 	/**
 	 * This instance variable represents the overdue status of a task.
 	 */
-	private Boolean overdue;
+	private boolean overdue;
 	/**
 	 * This instance variable represents a task description the user can input.
 	 */
