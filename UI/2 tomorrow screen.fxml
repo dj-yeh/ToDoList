@@ -3,7 +3,6 @@
 <?import com.gluonhq.charm.glisten.control.Avatar?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
@@ -15,7 +14,12 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Text layoutX="14.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calendar View">
+      <TextField fx:id="addTaskTextField" layoutX="14.0" layoutY="458.0" prefHeight="26.0" prefWidth="416.0" promptText="+  Add task" style="-fx-background-color: transparent;">
+         <font>
+            <Font name="Calibri Light" size="12.0" />
+         </font>
+      </TextField>
+      <Text layoutX="14.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tomorrow">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -27,9 +31,9 @@
       </ImageView>
       <ChoiceBox fx:id="themeChoiceBox" layoutX="586.0" layoutY="7.0" prefHeight="28.0" prefWidth="25.0" style="-fx-background-color: transparent;" />
       <Button fx:id="todayButton" layoutY="149.0" minHeight="13.0" mnemonicParsing="false" opacity="0.6" prefHeight="32.0" prefWidth="210.0" style="-fx-background-color: #A7CBF8;" text="☼ Today" />
-      <Button fx:id="tomorrowButton" layoutX="210.0" layoutY="149.0" minHeight="13.0" mnemonicParsing="false" opacity="0.6" prefHeight="32.0" prefWidth="210.0" style="-fx-background-color: #ABA7F8;" text="☾Tomorrow " />
-      <Button fx:id="CalendarButton" layoutX="420.0" layoutY="149.0" minHeight="13.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="210.0" style="-fx-background-color: #F8A7CB;" text="📅 Calendar" />
-      <ListView fx:id="tasksListView" layoutX="14.0" layoutY="295.0" prefHeight="160.0" prefWidth="407.0" />
+      <Button fx:id="tomorrowButton" layoutX="210.0" layoutY="149.0" minHeight="13.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="210.0" style="-fx-background-color: #ABA7F8;" text="☾Tomorrow " />
+      <Button fx:id="CalendarButton" layoutX="420.0" layoutY="149.0" minHeight="13.0" mnemonicParsing="false" opacity="0.6" prefHeight="32.0" prefWidth="210.0" style="-fx-background-color: #F8A7CB;" text="📅 Calendar" />
+      <ListView fx:id="tasksListView" layoutX="14.0" layoutY="218.0" prefHeight="236.0" prefWidth="407.0" />
       <Label fx:id="helloNameLabel" layoutX="66.0" layoutY="33.0" text="Hello, Sherry!" />
       <Text layoutX="10.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="YAM To Do List">
          <font>
@@ -46,12 +50,5 @@
             <Image url="@../../Pictures/art/1.png" />
          </image>
       </Avatar>
-      <DatePicker fx:id="datePicker" layoutX="15.0" layoutY="247.0" />
-      <Text layoutX="16.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select a day to see your planned events." />
-      <TextField fx:id="addTaskTextField" layoutX="16.0" layoutY="458.0" prefHeight="26.0" prefWidth="416.0" promptText="+  Add task" style="-fx-background-color: transparent;">
-         <font>
-            <Font name="Calibri Light" size="12.0" />
-         </font>
-      </TextField>
    </children>
 </AnchorPane>

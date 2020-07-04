@@ -14,12 +14,12 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fitHeight="500.0" fitWidth="379.0" layoutX="258.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="567.0" fitWidth="376.0" layoutX="298.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../Pictures/cloudss.jpg" />
          </image>
       </ImageView>
-      <VBox prefHeight="500.0" prefWidth="258.0">
+      <VBox prefHeight="500.0" prefWidth="298.0">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Aurora To Do List.">
                <font>
@@ -34,7 +34,7 @@
                   </LinearGradient>
                </fill>
                <VBox.margin>
-                  <Insets left="13.0" top="140.0" />
+                  <Insets left="33.0" top="140.0" />
                </VBox.margin>
             </Text>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="The Perfect App to Keep Track of Your Tasks.">
@@ -42,10 +42,10 @@
                   <Font name="Calibri Light" size="12.0" />
                </font>
                <VBox.margin>
-                  <Insets left="22.0" top="5.0" />
+                  <Insets left="40.0" top="5.0" />
                </VBox.margin>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter a name:">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter your name:">
                <VBox.margin>
                   <Insets left="13.0" top="50.0" />
                </VBox.margin>
@@ -58,9 +58,9 @@
                   <Insets left="10.0" right="10.0" />
                </VBox.margin>
             </TextField>
-            <Button mnemonicParsing="false" style="-fx-background-color: #aea6f2; -fx-border-radius: 5px; -fx-background-radius: 5px;" text="Continue">
+            <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="273.0" style="-fx-background-color: #aea6f2; -fx-border-radius: 5px; -fx-background-radius: 5px;" text="Continue">
                <VBox.margin>
-                  <Insets left="10.0" top="15.0" />
+                  <Insets left="11.0" top="15.0" />
                </VBox.margin>
             </Button>
          </children>
