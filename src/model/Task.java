@@ -36,9 +36,9 @@ public class Task
 	 * @param overdue indicates whether or not a task was completed in time
 	 * @param noteDescription will be the user's task description
 	 */
-	public Task(String task, boolean completed, boolean overdue, String noteDescription)
+	public Task(String taskName, boolean completed, boolean overdue, String noteDescription)
 	{
-		setTask(task);
+		setTaskName(taskName);
 		setCompleted(completed);
 		setOverdue(overdue);
 		setNoteDescription(noteDescription);
@@ -48,9 +48,9 @@ public class Task
 	 * A less general constructor which only requires the task.
 	 * @param task will be the name of the task
 	 */
-	public Task(String task)
+	public Task(String taskName)
 	{
-		this(task, false, false, null);
+		this(taskName, false, false, null);
 	}
 	
 	/**
@@ -64,19 +64,19 @@ public class Task
 	
 	//--------------------------------Constructors--------------------------------------
 	
-	public String getTask() 
+	public String getTaskName() 
 	{
-		return this.task;
+		return this.taskName;
 	}
 	
-	public void setTask(String task)
+	public void setTaskName(String taskName)
 	{
-		this.task = task;
+		this.taskName = taskName;
 	}
 	
 	public boolean getCompleted()
 	{
-		return this.getCompleted();
+		return this.completed;
 	}
 	
 	public void setCompleted(boolean completed)
@@ -86,7 +86,7 @@ public class Task
 	
 	public boolean getOverdue()
 	{
-		return this.getOverdue();
+		return this.overdue;
 	}
 	
 	public void setOverdue(boolean overdue)
@@ -96,7 +96,7 @@ public class Task
 	
 	public String getNoteDescription()
 	{
-		return this.getNoteDescription();
+		return this.noteDescription;
 	}
 	
 	public void setNoteDescription(String noteDescription)
