@@ -12,6 +12,7 @@ public class ToDoList
 	//------------------------------------------Instance Variables----------------------------------------------
 	/**
 	 * This instance variable represents the name of the to-do list.
+	 * MAY NOT NEED THIS
 	 */
 	private String name;
 	/**

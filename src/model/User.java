@@ -20,6 +20,18 @@ public class User
 	 * may need to change the data structure used here
 	 */
 	private ArrayList<ToDoList> lists;
+	
+	
+	//TENTATIVE
+	/**
+	 * This instance variable represents the path to the photo stored on the user's system for their profile picture
+	 */
+	private String propic;
+	
+	/**
+	 * This instance variable holds onto what theme the user wants
+	 */
+	private String theme;
 	//------------------------------Instance Variables----------------------------------
 	
 	
