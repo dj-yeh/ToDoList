@@ -1,69 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fitHeight="567.0" fitWidth="376.0" layoutX="298.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../Pictures/cloudss.jpg" />
-         </image>
-      </ImageView>
-      <VBox prefHeight="500.0" prefWidth="298.0">
-         <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Aurora To Do List.">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-               <fill>
-                  <LinearGradient endX="1.0" endY="1.0">
-                     <stops>
-                        <Stop color="#b4cfdc" />
-                        <Stop color="#aea6f2" offset="1.0" />
-                     </stops>
-                  </LinearGradient>
-               </fill>
-               <VBox.margin>
-                  <Insets left="33.0" top="140.0" />
-               </VBox.margin>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="The Perfect App to Keep Track of Your Tasks.">
-               <font>
-                  <Font name="Calibri Light" size="12.0" />
-               </font>
-               <VBox.margin>
-                  <Insets left="40.0" top="5.0" />
-               </VBox.margin>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter your name:">
-               <VBox.margin>
-                  <Insets left="13.0" top="50.0" />
-               </VBox.margin>
-            </Text>
-            <TextField prefHeight="26.0" prefWidth="416.0" promptText="Enter Name" style="-fx-background-color: transparent;">
-               <font>
-                  <Font name="Calibri Light" size="12.0" />
-               </font>
-               <VBox.margin>
-                  <Insets left="10.0" right="10.0" />
-               </VBox.margin>
-            </TextField>
-            <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="273.0" style="-fx-background-color: #aea6f2; -fx-border-radius: 5px; -fx-background-radius: 5px;" text="Continue">
-               <VBox.margin>
-                  <Insets left="11.0" top="15.0" />
-               </VBox.margin>
-            </Button>
-         </children>
-      </VBox>
+      <Button layoutX="177.0" layoutY="394.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="273.0" style="-fx-background-color: #FF8C8C; -fx-border-radius: 5px; -fx-background-radius: 5px;" text="Continue" />
+      <TextField alignment="CENTER" layoutX="225.0" layoutY="262.0" prefHeight="26.0" prefWidth="177.0" promptText="Enter Name" style="-fx-background-color: transparent;">
+         <font>
+            <Font name="Calibri Light" size="12.0" />
+         </font>
+      </TextField>
+      <Text layoutX="251.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter your name:" />
+      <Text layoutX="257.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="YAM To Do List">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="177.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Keep track of your tasks or yo mama gonna slap your ass.">
+         <font>
+            <Font name="Calibri Light" size="12.0" />
+         </font>
+      </Text>
+      <Text layoutX="199.0" layoutY="306.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose a theme (this can be changed later):" />
+      <Button layoutX="125.0" layoutY="333.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="Dark" />
+      <Button layoutX="289.0" layoutY="333.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="Rose" />
+      <Button layoutX="207.0" layoutY="333.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="Light" />
+      <Button layoutX="373.0" layoutY="333.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="Edgy" />
+      <Button layoutX="453.0" layoutY="333.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="TBD" />
    </children>
 </AnchorPane>
