@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.Avatar?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="810.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <AnchorPane prefHeight="224.0" prefWidth="802.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="bannerImageView" fitHeight="207.0" fitWidth="576.0" layoutX="237.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Desktop/ToDoList/UI/Floral%20Theme%20Banner.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="11.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="YAM To Do List">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Text>
+            <Label fx:id="helloNameLabel" layoutX="72.0" layoutY="39.0" text="Hello, Sherry!">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="settingsChoiceBox" layoutX="197.0" layoutY="3.0" prefHeight="25.0" prefWidth="12.0" style="-fx-background-color: transparent;" />
+            <Avatar layoutX="100.0" layoutY="90.0" scaleX="2.2" scaleY="2.2">
+               <image>
+                  <Image url="@../../../Pictures/art/5.png" />
+               </image>
+            </Avatar>
+            <Button fx:id="changePFPButton" layoutX="65.0" layoutY="151.0" mnemonicParsing="false" scaleX="0.8" scaleY="0.8" style="-fx-background-radius: 5px;" text="Change Picture" />
+            <Button fx:id="calendarButton" layoutX="542.0" layoutY="190.0" mnemonicParsing="false" opacity="0.8" prefWidth="270.0" style="-fx-background-color: #FFD47F;" text="📅 Calendar" />
+            <Button fx:id="tomorrowButton" layoutX="272.0" layoutY="190.0" mnemonicParsing="false" opacity="0.8" prefWidth="270.0" style="-fx-background-color: #fc5d8e;" text="☾Tomorrow " />
+            <Button fx:id="todayButton" layoutX="2.0" layoutY="190.0" mnemonicParsing="false" prefWidth="270.0" style="-fx-background-color: #FFC3D2;" text="☼ Today" />
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <AnchorPane prefHeight="416.0" prefWidth="541.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text layoutX="19.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calendar View">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Text>
+            <Label fx:id="todayDateLabel" layoutX="177.0" layoutY="18.0" text="July 4, 2020">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <ListView fx:id="tasksListView" layoutX="23.0" layoutY="110.0" prefHeight="211.0" prefWidth="497.0" />
+            <TextField fx:id="addTaskTextField" layoutX="22.0" layoutY="363.0" prefHeight="36.0" prefWidth="520.0" promptText="+  Add task for selected day" style="-fx-background-color: transparent;">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <Text layoutX="25.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select a day to see your future agenda." />
+            <DatePicker layoutX="25.0" layoutY="73.0" />
+            <Button layoutX="212.0" layoutY="69.0" mnemonicParsing="false" scaleX="0.8" scaleY="0.8" style="-fx-background-radius: 5px;" text="Confirm" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
