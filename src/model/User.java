@@ -1,5 +1,6 @@
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
@@ -7,8 +8,13 @@ import java.util.ArrayList;
  * @author DJ Yeh and Sherry Shao
  *
  */
-public class User 
+public class User implements Serializable
 {
+	/**
+	 * This is used to serialize this class of objects
+	 */
+	private static final long serialVersionUID = 1L;
+
 	//------------------------------Instance Variables----------------------------------
 	/**
 	 * This instance variable represents the name of the user.
@@ -29,50 +35,56 @@ public class User
 	private String propic;
 	
 	/**
-	 * This instance variable holds onto what theme the user wants
+	 * This instance variable holds onto what theme the user wants and holds the path to the banner.
 	 */
-	private String theme;
+	private String themeBanner;
 	//------------------------------Instance Variables----------------------------------
 	
 	
 	//--------------------------------Constructors--------------------------------------
 	/**
 	 * This is the most general constructor which the other constructors use to localize logic.
-	 * @param name will be the name of the user that may be passed to it
-	 * @param lists possibly at the time of creation of a user, they may have ToDoLists already,
-	 * 		  but may not be necessary
+	 * @param name is the name of the user
+	 * @param lists an ArrayList of ToDoLits
+	 * @param propic the path to the propic stored in the user's system
+	 * @param themeBanner the path to the banner associated with the theme selected by the user at the beginning
 	 */
-	public User(String name, ArrayList<ToDoList> lists)
+	public User(String name, ArrayList<ToDoList> lists, String propic, String themeBanner)
 	{
 		setName(name);
 		setLists(lists);
+		setPropic(propic);
+		setThemeBanner(themeBanner);
 	}
 	
 	/**
-	 * A less general constructor which only requires the name.
-	 * @param name will be the name of the user that may be passed to it
+	 * A less general constructor which only instantiates some of the instance variables.
+	 * @param name is the name of the user
+	 * @param propic the path to the propic stored in the user's system
+	 * @param themeBanner the path to the banner associated with the theme selected by the user at the beginning
 	 */
-	public User(String name)
+	public User(String name, String propic, String themeBanner)
 	{
-		this(name, null);
+		this(name, null, propic, themeBanner);
 	}
 	
 	/**
-	 * A less general constructor which only requires a list
-	 * @param lists possibly at the time of creation of a user, they may have ToDoLists already,
-	 * 		  but may not be necessary
+	 * A less general constructor which only instantiates some of the instance variables.
+	 * @param lists an ArrayList of ToDoLits
+	 * @param themeBanner the path to the banner associated with the theme selected by the user at the beginning
 	 */
-	public User(ArrayList<ToDoList> lists)
+	public User(ArrayList<ToDoList> lists, String themeBanner)
 	{
-		this(null, lists);
+		this(null, lists, null, themeBanner);
 	}
 	
 	/**
-	 * Least general in that it requires no-args.
+	 * A less general constructor which only instantiates some of the instance variables.
+	 * @param themeBanner the path to the banner associated with the theme selected by the user at the beginning
 	 */
-	public User()
+	public User(String themeBanner)
 	{
-		this(null, null);
+		this(null, null, null, themeBanner);
 	}
 	//--------------------------------Constructors--------------------------------------
 	
@@ -111,4 +123,104 @@ public class User
 	{
 		this.lists = lists;
 	}
+	
+	/**
+	 * Getter method for the path to the user's profile picture.
+	 * @return the path to the propic
+	 */
+	public String getPropic()
+	{
+		return this.propic;
+	}
+	
+	/**
+	 * Setter method for the path to the user's profile picture and may be used if the user wants to change
+	 * their profile picture.
+	 * @param propic the path to the propic on the user's system
+	 */
+	public void setPropic(String propic)
+	{
+		this.propic = propic;
+	}
+	
+	/**
+	 * Getter method for the path to the banner associated with the theme chosen by the user.
+	 * @return the path to the themeBanner
+	 */
+	public String getThemeBanner()
+	{
+		return this.themeBanner;
+	}
+	
+	/**
+	 * Setter method for the path to the theme banner.
+	 * @param themeBanner the path to the theme banner which will be stored in the project space.
+	 */
+	public void setThemeBanner(String themeBanner)
+	{
+		this.themeBanner = themeBanner;
+	}
+	
+	//---------------------------------FOR SERIALIZATION-------------------------------------
+	/**
+	 * This method just serializes an ArrayList of all user instances created by the
+	 * application
+	 * 
+	 * @param user is an ArrayList of all the user instances created by the
+	 *             application
+	 * @throws IOException which could occur when inputting into the file
+	 */
+	
+	/*
+	public static void writeToFile() throws IOException, FileNotFoundException {
+		// this is the file name which appears when you go through folders but not in
+		// project space
+		String fileName = "users.bin";
+		ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fileName));
+
+		// it will always serialize the number of users first so that it knows how many
+		// to deserialize
+		Integer num = PhotoAlbums.allUsers.size();
+		oos.writeObject(num);
+
+		// then using the info above, it serializes all the users
+		for (int i = 0; i < PhotoAlbums.allUsers.size(); i++) {
+			oos.writeObject(PhotoAlbums.allUsers.get(i));
+		}
+
+		// closes the stream
+		oos.close();
+	}
+	*/
+	/**
+	 * This method deserializes an ArrayList of all user instances formed by an
+	 * earlier use of the app.
+	 * 
+	 * @return an ArrayList of all users that have been created by an earlier use of
+	 *         the app
+	 * @throws IOException            which could occur when reading from the file,
+	 *                                specifically a type mismatch
+	 * @throws ClassNotFoundException there are no objects to deserialize
+	 */
+	/*
+	public static void readFromFile() throws IOException, ClassNotFoundException {
+		String fileName = "users.bin";
+		ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileName));
+
+		// it deserializes the number of users first
+		Integer numUsers = (Integer) ois.readObject();
+
+		// based on the info above it deserializes the users without going over the
+		// limit which would cause an error
+		for (int i = 0; i < numUsers; i++) {
+			try {
+				User user = (User) ois.readObject();
+				PhotoAlbums.allUsers.add(user);
+			} catch (EOFException e) {
+				ois.close();
+			}
+		}
+		ois.close();
+	}
+	*/
 }

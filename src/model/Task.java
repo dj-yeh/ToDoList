@@ -1,5 +1,6 @@
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
@@ -7,8 +8,14 @@ import java.util.ArrayList;
  * @author DJ Yeh and Sherry Shao
  *
  */
-public class Task 
+public class Task implements Serializable
 {
+	/**
+	 * This is used for serialization.
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	
 	//------------------------------Instance Variables----------------------------------
 	/**
 	 * This instance variable represents the name of the task.
