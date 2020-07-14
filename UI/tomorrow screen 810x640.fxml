@@ -19,7 +19,7 @@
    <top>
       <AnchorPane prefHeight="224.0" prefWidth="802.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fx:id="bannerImageView" fitHeight="207.0" fitWidth="576.0" layoutX="237.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="bannerIV" fitHeight="207.0" fitWidth="576.0" layoutX="237.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../Desktop/ToDoList/UI/Floral%20Theme%20Banner.png" />
                </image>
@@ -40,10 +40,10 @@
                   <Image url="@../../../Pictures/art/5.png" />
                </image>
             </Avatar>
-            <Button fx:id="changePFPButton" layoutX="65.0" layoutY="151.0" mnemonicParsing="false" onMouseClicked="#changePFP" scaleX="0.8" scaleY="0.8" style="-fx-background-radius: 5px;" text="Change Picture" />
-            <Button fx:id="calendarButton" layoutX="542.0" layoutY="190.0" mnemonicParsing="false" onMouseClicked="#showCalendar" opacity="0.85" prefWidth="270.0" style="-fx-background-color: #FFD47F;" text="📅 Calendar" />
-            <Button fx:id="tomorrowButton" layoutX="272.0" layoutY="190.0" mnemonicParsing="false" onMouseClicked="#showTomorrow" opacity="0.85" prefWidth="270.0" style="-fx-background-color: #fc5d8e;" text="☾Tomorrow " />
-            <Button fx:id="todayButton" layoutX="2.0" layoutY="190.0" mnemonicParsing="false" onMouseClicked="#showToday" prefWidth="270.0" style="-fx-background-color: #FFC3D2;" text="☼ Today" />
+            <Button fx:id="changePFPBtn" layoutX="65.0" layoutY="151.0" mnemonicParsing="false" onMouseClicked="#changePFP" scaleX="0.8" scaleY="0.8" style="-fx-background-radius: 5px;" text="Change Picture" />
+            <Button fx:id="calendarBtn" layoutX="542.0" layoutY="190.0" mnemonicParsing="false" onMouseClicked="#showCalendar" opacity="0.85" prefWidth="270.0" style="-fx-background-color: #FFD47F;" text="📅 Calendar" />
+            <Button fx:id="tomorrowBtn" layoutX="272.0" layoutY="190.0" mnemonicParsing="false" onMouseClicked="#showTomorrow" opacity="0.85" prefWidth="270.0" style="-fx-background-color: #fc5d8e;" text="☾Tomorrow " />
+            <Button fx:id="todayBtn" layoutX="2.0" layoutY="190.0" mnemonicParsing="false" onMouseClicked="#showToday" prefWidth="270.0" style="-fx-background-color: #FFC3D2;" text="☼ Today" />
          </children>
       </AnchorPane>
    </top>
@@ -61,30 +61,30 @@
                </font>
             </Label>
             <ListView fx:id="tasksListView" layoutX="23.0" layoutY="84.0" prefHeight="282.0" prefWidth="518.0" />
-            <TextField fx:id="addTaskTextField" layoutX="22.0" layoutY="363.0" onMouseClicked="#addTask" prefHeight="36.0" prefWidth="520.0" promptText="+  Add task" style="-fx-background-color: transparent;">
+            <TextField fx:id="addTaskTF" layoutX="22.0" layoutY="363.0" onMouseClicked="#addTask" prefHeight="36.0" prefWidth="520.0" promptText="+  Add task" style="-fx-background-color: transparent;">
                <font>
                   <Font size="16.0" />
                </font>
             </TextField>
-            <TextArea fx:id="memoTextArea" layoutX="549.0" layoutY="15.0" onMouseClicked="#addMemo" prefHeight="384.0" prefWidth="247.0" />
-            <Button fx:id="deleteTaskButton" layoutX="23.0" layoutY="48.0" mnemonicParsing="false" onMouseClicked="#deleteTask" scaleX="0.8" scaleY="0.8" style="-fx-background-color: #E74D6F;" text="🚮">
+            <TextArea fx:id="memoTextArea" layoutX="549.0" layoutY="15.0" onKeyPressed="#addMemo" prefHeight="384.0" prefWidth="247.0" />
+            <Button fx:id="deleteTaskBtn" layoutX="23.0" layoutY="48.0" mnemonicParsing="false" onMouseClicked="#deleteTask" scaleX="0.8" scaleY="0.8" style="-fx-background-color: #E74D6F;" text="🚮">
                <tooltip>
-                  <Tooltip text="select a task then press this button to delete" />
+                  <Tooltip text="Select a task then press this button to delete" />
                </tooltip>
             </Button>
-            <Button fx:id="setDueDateButton" layoutX="65.0" layoutY="48.0" minWidth="45.0" mnemonicParsing="false" onMouseClicked="#setDueDate" prefHeight="32.0" prefWidth="45.0" scaleX="0.8" scaleY="0.8" style="-fx-background-color: #E74D6F;" text="📝">
+            <Button fx:id="setDueDateBtn" layoutX="65.0" layoutY="48.0" minWidth="45.0" mnemonicParsing="false" onMouseClicked="#setDueDate" prefHeight="32.0" prefWidth="45.0" scaleX="0.8" scaleY="0.8" style="-fx-background-color: #E74D6F;" text="📝">
                <tooltip>
-                  <Tooltip text="select a task then press this button to change the due date" />
+                  <Tooltip text="Select a task then press this button to change the due date" />
                </tooltip>
             </Button>
-            <Button fx:id="higherPriorityButton" layoutX="112.0" layoutY="38.0" minWidth="53.0" mnemonicParsing="false" onMouseClicked="#higherPriority" prefHeight="53.0" prefWidth="53.0" scaleX="0.5" scaleY="0.5" style="-fx-background-radius: 100; -fx-background-color: #b2eba0;" text="▲">
+            <Button fx:id="higherPriorityButton" layoutX="112.0" layoutY="38.0" minWidth="53.0" mnemonicParsing="false" onMouseClicked="#increasePriority" prefHeight="53.0" prefWidth="53.0" scaleX="0.5" scaleY="0.5" style="-fx-background-radius: 100; -fx-background-color: #b2eba0;" text="▲">
                <tooltip>
-                  <Tooltip text="move the selected task higher up in priority" />
+                  <Tooltip text="Moves the selected task higher up in priority" />
                </tooltip>
             </Button>
-            <Button fx:id="lowerPriorityButton" layoutX="151.0" layoutY="39.0" minWidth="53.0" mnemonicParsing="false" onMouseClicked="#lowerPriority" prefHeight="53.0" prefWidth="53.0" scaleX="0.5" scaleY="0.5" style="-fx-background-radius: 100; -fx-background-color: #FF90A4;" text="▼">
+            <Button fx:id="lowerPriorityButton" layoutX="151.0" layoutY="39.0" minWidth="53.0" mnemonicParsing="false" onMouseClicked="#dcreasePriority" prefHeight="53.0" prefWidth="53.0" scaleX="0.5" scaleY="0.5" style="-fx-background-radius: 100; -fx-background-color: #FF90A4;" text="▼">
                <tooltip>
-                  <Tooltip text="move the selected task lower in priority" />
+                  <Tooltip text="Moves the selected task lower in priority" />
                </tooltip>
             </Button>
          </children>
