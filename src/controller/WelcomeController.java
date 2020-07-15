@@ -1,9 +1,14 @@
 package controller;
 
+import java.io.IOException;
+
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
 /**
  * This is the controller for the /view/welcome_screen.fxml file.
@@ -39,11 +44,12 @@ public class WelcomeController
 	/**
 	 * Event handler for the continueBtn button when clicked upon.
 	 * Should set up the user with his/her name, the theme, and other things.
+	 * @throws IOException 
 	 */
 	@FXML
-	private void setUpUser()
+	private void setUpUser() throws IOException
 	{
-		
+		this.switchScene("/view/today_screen.fxml", this.continueBtn);
 	}
 	
 	/**
@@ -91,7 +97,12 @@ public class WelcomeController
 		
 	}
 	
-	
-	
-	
+    private void switchScene(String file, Button button) throws IOException
+    {
+    	FXMLLoader loader = new FXMLLoader(getClass().getResource(file));
+        Stage stage = (Stage) button.getScene().getWindow();
+        Scene scene = new Scene(loader.load());
+        stage.setScene(scene);
+    }
+
 }
