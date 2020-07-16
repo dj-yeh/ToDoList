@@ -11,7 +11,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.control.Control; //look into this for Avatar widget
 
 /**
- * This is the controller class for the today_screen.fxml file.
+ * This is the controller class for the tomorrow_screen.fxml file.
  * @author sherryshao7
  */
 public class TomorrowController {
@@ -20,7 +20,7 @@ public class TomorrowController {
 	@FXML
 	private ChoiceBox<Label> settingsChoiceBox;
 	@FXML
-	private Control pfpAvatar; //need to double check this
+	private Control PFPAvatar; //need to double check this
 	@FXML
 	private ListView<TextField> tasksListView;
 	@FXML
