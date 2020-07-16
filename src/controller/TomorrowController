@@ -1,0 +1,141 @@
+package controller;
+
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.control.Control; //look into this for Avatar widget
+
+/**
+ * This is the controller class for the today_screen.fxml file.
+ * @author sherryshao7
+ */
+public class TomorrowController {
+	@FXML
+	private ImageView bannerImageView;
+	@FXML
+	private ChoiceBox<Label> settingsChoiceBox;
+	@FXML
+	private Control pfpAvatar; //need to double check this
+	@FXML
+	private ListView<TextField> tasksListView;
+	@FXML
+	private TextField addTaskTF;
+	@FXML 
+	private TextArea memoTextArea;
+	@FXML
+	private Label hellowNameLabel;
+	@FXML 
+	private Label todayDateLabel;
+	@FXML
+	private Button changePFPBtN;
+	@FXML
+	private Button calendarBtN;
+	@FXML
+	private Button tomorrowBtN;
+	@FXML
+	private Button todayBtN;
+	@FXML 
+	private Button deleteTaskBtN;
+	@FXML
+	private Button setDueDateBtN;
+	@FXML
+	private Button higherPriorityBtN;
+	@FXML
+	private Button lowerPriorityBtN;
+	
+	/**
+	 * Event handler for settingsChoiceBox variable when clicked.
+	 */
+	@FXML
+	private void showSettings() {
+		
+	}
+	
+	/**
+	 * Event handler for changePFPBtN button when clicked.
+	 */
+	@FXML
+	private void changePFP() {
+		
+	}
+	
+	/**
+	 * Event handler for calendarBtN button when clicked.
+	 */
+	@FXML
+	private void showCalendar() {
+		
+	}
+	
+	/**
+	 * Event handler for tomorrowBtN button when clicked.
+	 */
+	@FXML
+	private void showTomorrow() {
+		
+	}
+	
+	/**
+	 * Event handler for the todayBtN button when clicked.
+	 */
+	@FXML
+	private void showToday() {
+		
+	}
+	
+	/**
+	 * Event handler for addTaskTF text field when clicked.
+	 * Need to differentiate between valid and invalid inputs so that unnamed tasks are not created.
+	 * Also needs to clear the text field after successfully creating a task.
+	 */
+	@FXML
+	private void addTask() {
+		
+	}
+	
+	/**
+	 * Event handler for the memoTextArea when text area is clicked on.
+	 * may need to change the trigger event for this widget
+	 */
+	@FXML
+	private void addMemo() {
+		
+	}
+	
+	/**
+	 * Event handler for deleteTaskBtN button when clicked.
+	 */
+	@FXML
+	private void deleteTask() {
+		
+	}
+	
+	/**
+	 * Event handler for setDueDateBtN button when clicked.
+	 */
+	@FXML
+	private void setDueDate() {
+		
+	}
+	
+	/**
+	 * Event handler for higherPriorityBtN button when clicked.
+	 */
+	@FXML
+	private void increasePriority() {
+		
+	}
+	
+	/**
+	 * Event handler for lowerPriorityBtN button when clicked.
+	 */
+	@FXML
+	private void decreasePriority() {
+		
+	}
+}
