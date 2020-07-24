@@ -18,22 +18,22 @@ public class WelcomeController
 {
 	
 	@FXML
-	private Button continueBtn;
+	private Button continueBtN;
 	
 	@FXML
-	private Button darkThemeBtn;
+	private Button darkThemeBtN;
 	
 	@FXML
-	private Button rosyThemeBtn;
+	private Button rosyThemeBtN;
 	
 	@FXML
-	private Button lightThemeBtn;
+	private Button lightThemeBtN;
 	
 	@FXML
-	private Button fourthThemeBtn;
+	private Button fourthThemeBtN;
 	
 	@FXML
-	private Button fifthThemeBtn;
+	private Button fifthThemeBtN;
 	
 	@FXML
 	private ImageView yamLogoIV;
@@ -49,7 +49,7 @@ public class WelcomeController
 	@FXML
 	private void setUpUser() throws IOException
 	{
-		this.switchScene("/view/today_screen.fxml", this.continueBtn);
+		this.switchScene("/view/today_screen.fxml", this.continueBtN);
 	}
 	
 	/**
