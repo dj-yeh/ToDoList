@@ -57,6 +57,7 @@ public class User implements Serializable
 		setThemeBanner(themeBanner);
 	}
 	
+	
 	/**
 	 * A less general constructor which only instantiates some of the instance variables.
 	 * @param name is the name of the user

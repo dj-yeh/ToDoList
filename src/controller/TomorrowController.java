@@ -1,54 +1,66 @@
 package controller;
 
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.control.DatePicker;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
 /**
- * This is the controller class for the calendar_screen.fxml file.
- * @author sherryshao7
+ * This is the controller class for the tomorrow_screen.fxml file.
+ * @author DJ Yeh and Sherry Shao
  */
-public class CalendarController {
+public class TomorrowController implements Initializable{
 	@FXML
 	private ImageView bannerImageView;
 	@FXML
 	private ChoiceBox<Label> settingsChoiceBox;
-  @FXML
-	private Label hellowNameLabel;
+	
 	@FXML
 	private ListView<TextField> tasksListView;
-  @FXML
-	private Button changePFPBtN;
-  @FXML
-	private Button calendarBtN;
-	@FXML
-	private Button tomorrowBtN;
-	@FXML
-	private Button todayBtN;
-  @FXML 
-	private Label selectedDateLabel;
 	@FXML
 	private TextField addTaskTF;
-  @FXML
-  private DatePicker calendarDatePicker;
-  @FXML
-  private Button confirmDateBtN
 	@FXML 
 	private TextArea memoTextArea;
+	@FXML
+	private Label hellowNameLabel;
 	@FXML 
-	private Button deleteTaskBtN;
+	private Label todayDateLabel;
 	@FXML
-	private Button setDueDateBtN;
+	private Button changePFPBtn;
 	@FXML
-	private Button higherPriorityBtN;
+	private Button calendarBtn;
 	@FXML
-	private Button lowerPriorityBtN;
+	private Button tomorrowBtn;
+	@FXML
+	private Button todayBtn;
+	@FXML 
+	private Button deleteTaskBtn;
+	@FXML
+	private Button setDueDateBtn;
+	@FXML
+	private Button higherPriorityBtn;
+	@FXML
+	private Button lowerPriorityBtn;
+	
+	/**
+	 * This method is called/ran every time the screen is entered that this controller is associated with.
+	 */
+	public void initialize(URL arg0, ResourceBundle arg1) 
+	{
+	
+	}
 	
 	/**
 	 * Event handler for settingsChoiceBox variable when clicked.
@@ -71,7 +83,12 @@ public class CalendarController {
 	 */
 	@FXML
 	private void showCalendar() {
-		
+		try {
+			this.switchScene("/view/calendar_screen.fxml", this.calendarBtn);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	/**
@@ -79,7 +96,7 @@ public class CalendarController {
 	 */
 	@FXML
 	private void showTomorrow() {
-		
+
 	}
 	
 	/**
@@ -87,7 +104,12 @@ public class CalendarController {
 	 */
 	@FXML
 	private void showToday() {
-		
+		try {
+			this.switchScene("/view/today_screen.fxml", this.todayBtn);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	/**
@@ -101,14 +123,6 @@ public class CalendarController {
 	}
 	
 	/**
-	 * Event handler for confirmDateBtN button when clicked.
-	 */
-	@FXML
-	private void confirmDate() {
-		
-	}
-  
-  /**
 	 * Event handler for the memoTextArea when text area is clicked on.
 	 * may need to change the trigger event for this widget
 	 */
@@ -148,4 +162,12 @@ public class CalendarController {
 	private void decreasePriority() {
 		
 	}
+	private void switchScene(String file, Button button) throws IOException
+    {
+    	FXMLLoader loader = new FXMLLoader(getClass().getResource(file));
+        Stage stage = (Stage) button.getScene().getWindow();
+        Scene scene = new Scene(loader.load());
+        stage.setScene(scene);
+    }
 }
+

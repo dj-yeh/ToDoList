@@ -1,6 +1,13 @@
 package controller;
 
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
@@ -8,12 +15,13 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
 /**
  * This is the controller class for the today_screen.fxml file.
- * @author dj_yeh
+ * @author DJ Yeh and Sherry Shao
  */
-public class TodayController 
+public class TodayController implements Initializable
 {
 	@FXML
 	private ImageView bannerImageView;
@@ -23,9 +31,6 @@ public class TodayController
 	 */
 	@FXML
 	private ChoiceBox<Label> settingsChoiceBox;
-	
-	//@FXML
-	//private Avatar pfpAvatar;
 	
 	/**
 	 * May need to change the widget being placed into the ListView Widget
@@ -70,6 +75,14 @@ public class TodayController
 	private Button lowerPriorityBtn;
 	
 	/**
+	 * This method is called/ran every time the screen is entered that this controller is associated with.
+	 */
+	public void initialize(URL arg0, ResourceBundle arg1) 
+	{
+	
+	}
+	
+	/**
 	 * Event handler for the settingsChoiceBox variable when clicked.
 	 */
 	@FXML
@@ -93,7 +106,12 @@ public class TodayController
 	@FXML
 	private void showCalendar()
 	{
-		
+		try {
+			this.switchScene("/view/calendar_screen.fxml", this.calendarBtn);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	/**
@@ -102,7 +120,12 @@ public class TodayController
 	@FXML
 	private void showTomorrow()
 	{
-		
+		try {
+			this.switchScene("/view/tomorrow_screen.fxml", this.tomorrowBtn);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	/**
@@ -170,4 +193,13 @@ public class TodayController
 	{
 		
 	}
+	
+	private void switchScene(String file, Button button) throws IOException
+    {
+    	FXMLLoader loader = new FXMLLoader(getClass().getResource(file));
+        Stage stage = (Stage) button.getScene().getWindow();
+        Scene scene = new Scene(loader.load());
+        stage.setScene(scene);
+    }
 }
+

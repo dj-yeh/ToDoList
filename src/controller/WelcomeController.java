@@ -18,83 +18,23 @@ public class WelcomeController
 {
 	
 	@FXML
-	private Button continueBtN;
-	
-	@FXML
-	private Button darkThemeBtN;
-	
-	@FXML
-	private Button rosyThemeBtN;
-	
-	@FXML
-	private Button lightThemeBtN;
-	
-	@FXML
-	private Button fourthThemeBtN;
-	
-	@FXML
-	private Button fifthThemeBtN;
+	private Button nextBtn;
 	
 	@FXML
 	private ImageView yamLogoIV;
 	
-	@FXML
-	private TextField nameTF;
-	
 	/**
-	 * Event handler for the continueBtn button when clicked upon.
-	 * Should set up the user with his/her name, the theme, and other things.
-	 * @throws IOException 
+	 * Event handler for the nextBtn button when clicked.
 	 */
 	@FXML
-	private void setUpUser() throws IOException
+	private void openApp()
 	{
-		this.switchScene("/view/today_screen.fxml", this.continueBtN);
-	}
-	
-	/**
-	 * Event handler for the darkThemeBtn button when clicked upon.
-	 */
-	@FXML
-	private void changeToDark()
-	{
-		
-	}
-	
-	/**
-	 * Event handler for the rosyThemeBtn button when clicked upon.
-	 */
-	@FXML
-	private void changeToRosy()
-	{
-		
-	}
-	
-	/**
-	 * Event handler for the lightThemeBtn button when clicked upon.
-	 */
-	@FXML
-	private void changeToLight()
-	{
-		
-	}
-	
-	/**
-	 * Event handler for the fourthThemeBtn button when clicked upon.
-	 */
-	@FXML
-	private void changeToFourth()
-	{
-		
-	}
-	
-	/**
-	 * Event handler for the fifthThemeBtn button when clicked upon.
-	 */
-	@FXML
-	private void changeToFifth()
-	{
-		
+		try {
+			switchScene("/view/user_setup.fxml", this.nextBtn);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
     private void switchScene(String file, Button button) throws IOException
@@ -106,3 +46,4 @@ public class WelcomeController
     }
 
 }
+
