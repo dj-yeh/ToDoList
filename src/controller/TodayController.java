@@ -45,7 +45,7 @@ public class TodayController implements Initializable
 	private TextArea memoTextArea;
 	
 	@FXML
-	private Label hellowNameLabel;
+	private Label helloNameLabel;
 	
 	@FXML 
 	private Label todayDateLabel;
@@ -79,7 +79,9 @@ public class TodayController implements Initializable
 	 */
 	public void initialize(URL arg0, ResourceBundle arg1) 
 	{
-	
+		//personalizes the name label by setting it to the user's entered name
+		helloNameLabel.setText("Hello, " + Driver.user.getName() + "!");
+		//System.out.println(Driver.user.getThemeBanner());
 	}
 	
 	/**
@@ -88,7 +90,7 @@ public class TodayController implements Initializable
 	@FXML
 	private void showSettings()
 	{
-		
+		//need to look up how to do this part
 	}
 	
 	/**
@@ -97,7 +99,7 @@ public class TodayController implements Initializable
 	@FXML
 	private void changePFP()
 	{
-		
+		//should be a file chooser here to display the photo/choose the photo
 	}
 	
 	/**
@@ -134,7 +136,7 @@ public class TodayController implements Initializable
 	@FXML
 	private void showToday()
 	{
-		
+		//shouldn't do anything since it's being clicked from the TodayController
 	}
 	
 	/**

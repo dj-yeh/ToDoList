@@ -1,9 +1,13 @@
 package controller;
 
+import java.io.IOException;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 import model.User;
 
@@ -41,8 +45,15 @@ public class Driver extends Application
 		 // |
 		 // |
 		 // \/
-		 
-		 
+		 try {
+			 Driver.user = User.readFromFile();
+		 } catch (ClassNotFoundException e) {
+			 // TODO Auto-generated catch block
+			 e.printStackTrace();
+		 } catch (IOException e) {
+			 // TODO Auto-generated catch block
+			 e.printStackTrace();
+		 }
 		 
 		 //**************************************************************************
 		 launch(args);
@@ -72,7 +83,14 @@ public class Driver extends Application
 		 mainStage.setOnCloseRequest(e -> {
 			 try 
 			 {
-			 	 //User.writeToFile();
+				 if(Driver.user.getName().equals("") || Driver.user.getName() == null)
+				 {
+					 
+				 }
+				 else
+				 {
+					 User.writeToFile(Driver.user);
+				 }
 			 } 
 			 catch (Exception err) 
 			 {
@@ -82,4 +100,18 @@ public class Driver extends Application
 		 });
 		// -------------------------------------------------------------------------------------------------
 	 }
+	 
+	 /**
+	  * This method handles displaying error messages from various parts of the program.
+	  *
+	  * @param message is a String which represents the error message to be displayed from various points in the program.
+	  */
+	public static void displayErrorMessage(String message)
+    {
+    	Alert alert = new Alert(AlertType.INFORMATION);
+   	    alert.initOwner(mainStage);
+   	    alert.setTitle("Error");
+   	    alert.setHeaderText(message);
+   	    alert.showAndWait();
+    }
 }

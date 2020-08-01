@@ -1,7 +1,16 @@
 package model;
 
+import java.io.EOFException;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
+
+import controller.Driver;
 
 /**
  * This class represents the single user using this app on their laptop.
@@ -37,7 +46,7 @@ public class User implements Serializable
 	/**
 	 * This instance variable holds onto what theme the user wants and holds the path to the banner.
 	 */
-	private String themeBanner;
+	private int themeBanner;
 	//------------------------------Instance Variables----------------------------------
 	
 	
@@ -49,7 +58,7 @@ public class User implements Serializable
 	 * @param propic the path to the propic stored in the user's system
 	 * @param themeBanner the path to the banner associated with the theme selected by the user at the beginning
 	 */
-	public User(String name, ArrayList<ToDoList> lists, String propic, String themeBanner)
+	public User(String name, ArrayList<ToDoList> lists, String propic, int themeBanner)
 	{
 		setName(name);
 		setLists(lists);
@@ -64,7 +73,7 @@ public class User implements Serializable
 	 * @param propic the path to the propic stored in the user's system
 	 * @param themeBanner the path to the banner associated with the theme selected by the user at the beginning
 	 */
-	public User(String name, String propic, String themeBanner)
+	public User(String name, String propic, int themeBanner)
 	{
 		this(name, null, propic, themeBanner);
 	}
@@ -74,7 +83,7 @@ public class User implements Serializable
 	 * @param lists an ArrayList of ToDoLits
 	 * @param themeBanner the path to the banner associated with the theme selected by the user at the beginning
 	 */
-	public User(ArrayList<ToDoList> lists, String themeBanner)
+	public User(ArrayList<ToDoList> lists, int themeBanner)
 	{
 		this(null, lists, null, themeBanner);
 	}
@@ -83,7 +92,7 @@ public class User implements Serializable
 	 * A less general constructor which only instantiates some of the instance variables.
 	 * @param themeBanner the path to the banner associated with the theme selected by the user at the beginning
 	 */
-	public User(String themeBanner)
+	public User(int themeBanner)
 	{
 		this(null, null, null, themeBanner);
 	}
@@ -148,7 +157,7 @@ public class User implements Serializable
 	 * Getter method for the path to the banner associated with the theme chosen by the user.
 	 * @return the path to the themeBanner
 	 */
-	public String getThemeBanner()
+	public int getThemeBanner()
 	{
 		return this.themeBanner;
 	}
@@ -157,42 +166,32 @@ public class User implements Serializable
 	 * Setter method for the path to the theme banner.
 	 * @param themeBanner the path to the theme banner which will be stored in the project space.
 	 */
-	public void setThemeBanner(String themeBanner)
+	public void setThemeBanner(int themeBanner)
 	{
 		this.themeBanner = themeBanner;
 	}
 	
 	//---------------------------------FOR SERIALIZATION-------------------------------------
 	/**
-	 * This method just serializes an ArrayList of all user instances created by the
-	 * application
-	 * 
-	 * @param user is an ArrayList of all the user instances created by the
-	 *             application
+	 * This method just serializes an ArrayList of all user instances created by the application
+	 * @param user is an ArrayList of all the user instances created by the application
 	 * @throws IOException which could occur when inputting into the file
 	 */
 	
-	/*
-	public static void writeToFile() throws IOException, FileNotFoundException {
-		// this is the file name which appears when you go through folders but not in
-		// project space
-		String fileName = "users.bin";
+	
+	public static void writeToFile(User user) throws IOException, FileNotFoundException 
+	{
+		//this is the file name which appears when you go through folders but not in project space
+		String fileName = "user_info.bin";
 		ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fileName));
 
-		// it will always serialize the number of users first so that it knows how many
-		// to deserialize
-		Integer num = PhotoAlbums.allUsers.size();
-		oos.writeObject(num);
 
-		// then using the info above, it serializes all the users
-		for (int i = 0; i < PhotoAlbums.allUsers.size(); i++) {
-			oos.writeObject(PhotoAlbums.allUsers.get(i));
-		}
+		oos.writeObject(user);
 
 		// closes the stream
 		oos.close();
 	}
-	*/
+	
 	/**
 	 * This method deserializes an ArrayList of all user instances formed by an
 	 * earlier use of the app.
@@ -203,25 +202,19 @@ public class User implements Serializable
 	 *                                specifically a type mismatch
 	 * @throws ClassNotFoundException there are no objects to deserialize
 	 */
-	/*
-	public static void readFromFile() throws IOException, ClassNotFoundException {
-		String fileName = "users.bin";
+	
+	public static User readFromFile() throws IOException, ClassNotFoundException {
+		String fileName = "user_info.bin";
 		ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileName));
-
-		// it deserializes the number of users first
-		Integer numUsers = (Integer) ois.readObject();
-
-		// based on the info above it deserializes the users without going over the
-		// limit which would cause an error
-		for (int i = 0; i < numUsers; i++) {
-			try {
-				User user = (User) ois.readObject();
-				PhotoAlbums.allUsers.add(user);
-			} catch (EOFException e) {
-				ois.close();
-			}
+		User user = null;
+		try {
+			user = (User) ois.readObject();
+		} catch (EOFException e) {
+			ois.close();
 		}
+		
 		ois.close();
+		return user;
 	}
-	*/
+	
 }
